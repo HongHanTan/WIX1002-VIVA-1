@@ -11,6 +11,8 @@ public class V6 {
      * Checks whether a character represents a digit between '2' and '9'.
      * @param character the character to check
      * @return true if the character is a digit from '2' to '9', false otherwise
+     * character comparison is possible because of java using ASCII values
+     * '2' to '9' are in consecutive order in ASCII table (50 to 57)
      */
     public static boolean isInt(int character) {
         return (character >= '2' && character <= '9');
@@ -79,6 +81,7 @@ public class V6 {
                 char curr = arr[i].charAt(j);
                 if (isInt(curr)) {
                     // Digits from 2–9 mean "repeat previous character (digit - 1) times"
+                    // We subtract '0' (ascii : 48) to convert char digit to int value
                     count += (curr - '0') - 1;
                 } else {
                     // Each letter contributes +1 to decompressed length
