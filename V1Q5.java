@@ -40,16 +40,23 @@ public class V1Q5 {
             }
 
             if(status){
-                int index1 = -1;
-                int index2 = -1;
+                int index1 = -2;
+                int index2 = -2;
+                //boolean flag = true;
                 for(int k=0; k<word.length();k++){
                     for (int j = 0;j<vowels.length;j++){
                         if(word.charAt(k)==vowels[j]){
                             index1 = index2;
                             index2 = k;
+                            System.out.println("index1 : " + index1);
+                            System.out.println("Index 2 : " + index2);
+                            System.out.println("k : " + k);
+                           
                             break;
                         }
                     }
+                    
+                    
                     if (index2 -1 == index1){
                         System.out.println("Chaos");
                         status = false;
